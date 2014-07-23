@@ -11,7 +11,7 @@ There is one R script called run_analysis.R that does the following.
 * Appropriately labels the data set with descriptive variable names. 
 * Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
-While you could have each of these in scripts of there own, I opted to have a single script and achieve all the above via it. Also, while I could have pre-optimized the statements to achieve 
+While you could have each of these steps in scripts of their own, I opted to have a single script and achieve all the above via it. Also, while I could have pre-optimized the statements to achieve 
 the final result of tidying the data; I thought it would be better to execute each of the above tasks explicitly. Each step is commented clearly in the R file. A very miniscule cost is incurred
 in redoing some steps(like reconcatenating some columns which got dropped) in order to show the output of each of the above tasks, separately.
 
@@ -20,13 +20,19 @@ in redoing some steps(like reconcatenating some columns which got dropped) in or
 ## Prerequisites
 * Make sure you have R and Rscript installed on your system. 
 * On the r prompt install the following R packages
-* install.packages(gsubfn)
-* install.packages(reshape2)
+* install.packages("gsubfn")
+* install.packages("reshape2")
 
 ## Running the project
 * git clone https://github.com/mridulj/getdata.git
 * cd getdata
 * Download the dataset from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 * unzip it into a sub-directory "UCI HAR Dataset"
+* I have included the output file called "tidyresults.txt" in the repo, as it is easily readable. Please delete it from your local system before running the program below.
 * Run "Rscript run_analysis.R" from the current dir i.e getdata
 * You should see the results in a file called "tidyresults.txt", in the current directory. This file if required can be loaded into R for further data analysis using read.table()
+
+# Repo files included
+* run_analysis.R: The main program used to tidy the data
+* CodeBook.md: A code book that describes the variables, the data, summary choices, experimental study design and any transformations or work that I have performed to clean up the data.
+* tidyresults.txt: I have included the output file called "tidyresults.txt" in the repo, as it is easily readable. Please delete it from your local system before running the program.
