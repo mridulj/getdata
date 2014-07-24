@@ -35,7 +35,7 @@ dat_mean_std_activity <- cbind(dat_mean_std,activity)
 
 #Task4: Appropriately label the data set with descriptive variable names. 
 #Use the feature labels extracted earlier for mean and std and create a tall column as mean and std come next to each other in the table
-mean_std_name <- c(as.character(fmean$V2),as.character(fstd$V2))
+mean_std_name <- c(as.character(sub("\\(\\)","",fmean$V2,)),as.character(sub("\\(\\)","",fstd$V2,)))
 colnames <- c(mean_std_name,"activity")
 #Complete task 4 now
 names(dat_mean_std_activity) <- colnames
