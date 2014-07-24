@@ -1,8 +1,6 @@
-==================================================================
-Human Activity Recognition Using Smartphones Dataset
-Version 1.0
-==================================================================
-The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
+# Human Activity Recognition Using Smartphones Dataset - Version 1.0
+
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. <br/>
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details.
 
 # Transformation on the data
@@ -25,16 +23,18 @@ The code comments have all the following steps listed clearly.
 
 # Variables
 The data cleaning project doesn't specify any specific "mean" or "standard deviation" to be extracted. So I have extracted all possible in the dataset. A domain definition and meaning of each of these
-is given in detail in the next section i.e "Features".
+is given in detail in the next section i.e "Features".<br/>
+All gyro observations are in radians/sec units. <br/>
+All acceleration observations are in standard gravity units 'g'.<br/>
 
 * "activity" : Activities performed by each subject wearing a smartphone (Samsung Galaxy S II) on the waist. One of WALKING, WALKING_UPSTAIRS,WALKING_DOWNSTAIRS,SITTING,STANDING,LAYING
 * "subject" : Group of 30 volunteers within an age bracket of 19-48 years. Value of the variable between 1-30 (both inclusive)
-* "tBodyAcc-mean-X" "tBodyAcc-mean-Y" "tBodyAcc-mean-Z" - Mean of body acceleration signals in the corresponding X,Y & Z directions
-* "tGravityAcc-mean-X" "tGravityAcc-mean-Y" "tGravityAcc-mean-Z" - Mean of gravity acceleration signals in the corresponding X,Y & Z directions
-* "tBodyAccJerk-mean-X" "tBodyAccJerk-mean-Y" "tBodyAccJerk-mean-Z" - Mean of Jerk signal in corresponding X,Y & Z directions, derived in time from body linear acceleration
-* "tBodyGyro-mean-X" "tBodyGyro-mean-Y" "tBodyGyro-mean-Z" - Mean of body angular velocity in corresponding X,Y & Z direction
-* "tBodyGyroJerk-mean-X" "tBodyGyroJerk-mean-Y" "tBodyGyroJerk-mean-Z" - Mean of Jerk signal in corresponding X,Y & Z directions, derived in time from body angular velocity
-* "tBodyAccMag-mean" "tGravityAccMag-mean" "tBodyAccJerkMag-mean" "tBodyGyroMag-mean" "tBodyGyroJerkMag-mean" - Mean magnitude of the three-dimensional signals which were calculated using the Euclidean norm for corresponding body acceleration, gravity acceleration, jerk signal form body linear acceleration, body angular velocity and jerk signal from body angular velocity.
+* "tBodyAcc-mean-X" "tBodyAcc-mean-Y" "tBodyAcc-mean-Z" - Mean of body acceleration signals in the corresponding X,Y & Z directions (standard gravity units 'g')
+* "tGravityAcc-mean-X" "tGravityAcc-mean-Y" "tGravityAcc-mean-Z" - Mean of gravity acceleration signals in the corresponding X,Y & Z directions (standard gravity units 'g')
+* "tBodyAccJerk-mean-X" "tBodyAccJerk-mean-Y" "tBodyAccJerk-mean-Z" - Mean of Jerk signal in corresponding X,Y & Z directions, derived in time from body linear acceleration (standard gravity units 'g')
+* "tBodyGyro-mean-X" "tBodyGyro-mean-Y" "tBodyGyro-mean-Z" - Mean of body angular velocity in corresponding X,Y & Z direction (radian/sec)
+* "tBodyGyroJerk-mean-X" "tBodyGyroJerk-mean-Y" "tBodyGyroJerk-mean-Z" - Mean of Jerk signal in corresponding X,Y & Z directions, derived in time from body angular velocity (radians/sec)
+* "tBodyAccMag-mean" "tGravityAccMag-mean" "tBodyAccJerkMag-mean" "tBodyGyroMag-mean" "tBodyGyroJerkMag-mean" - Mean magnitude of the three-dimensional signals which were calculated using the Euclidean norm for corresponding body acceleration, gravity acceleration, jerk signal form body linear acceleration, body angular velocity and jerk signal from body angular velocity. 
 * "fBodyAcc-mean-X" "fBodyAcc-mean-Y" "fBodyAcc-mean-Z" -  Mean of signals produced by applying Fast Fourier Transform (FFT) in the corresponding X,Y & Z directions for body acceleration.
 * "fBodyAccJerk-mean-X" "fBodyAccJerk-mean-Y" "fBodyAccJerk-mean-Z" -  Mean of signals produced by applying Fast Fourier Transform (FFT) in the corresponding X,Y & Z directions for jerk signal from body linear acceleration
 * "fBodyGyro-mean-X" "fBodyGyro-mean-Y" "fBodyGyro-mean-Z" -  Mean of signals produced by applying Fast Fourier Transform (FFT) in the corresponding X,Y & Z directions for body angular velocity
